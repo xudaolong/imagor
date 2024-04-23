@@ -3,8 +3,8 @@ package imagor
 import (
 	"context"
 	"errors"
-	"github.com/cshum/imagor/imagorpath"
 	"github.com/stretchr/testify/assert"
+	"github.com/xudaolong/imagor/imagorpath"
 	"net"
 	"net/http"
 	"net/url"

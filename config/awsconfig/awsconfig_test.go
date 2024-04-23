@@ -3,10 +3,10 @@ package awsconfig
 import (
 	"testing"
 
-	"github.com/cshum/imagor"
-	"github.com/cshum/imagor/config"
-	"github.com/cshum/imagor/storage/s3storage"
 	"github.com/stretchr/testify/assert"
+	"github.com/xudaolong/imagor"
+	"github.com/xudaolong/imagor/config"
+	"github.com/xudaolong/imagor/storage/s3storage"
 )
 
 func TestS3Empty(t *testing.T) {

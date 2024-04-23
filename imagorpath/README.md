@@ -3,7 +3,7 @@
 Parse and generate imagor endpoint using Go struct
 
 ```go
-import "github.com/cshum/imagor/imagorpath"
+import "github.com/xudaolong/imagor/imagorpath"
 
 ...
 

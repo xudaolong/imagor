@@ -2,8 +2,8 @@ package vips
 
 import (
 	"context"
-	"github.com/cshum/imagor"
 	"github.com/stretchr/testify/assert"
+	"github.com/xudaolong/imagor"
 	"runtime"
 	"testing"
 )

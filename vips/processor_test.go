@@ -13,11 +13,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cshum/imagor"
-	"github.com/cshum/imagor/imagorpath"
-	"github.com/cshum/imagor/storage/filestorage"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/xudaolong/imagor"
+	"github.com/xudaolong/imagor/imagorpath"
+	"github.com/xudaolong/imagor/storage/filestorage"
 	"go.uber.org/zap"
 )
 

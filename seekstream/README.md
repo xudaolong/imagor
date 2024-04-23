@@ -17,7 +17,7 @@ Use `NewMemoryBuffer(size)` if total size is known and can be fit inside memory:
 package main
 
 import (
-	"github.com/cshum/imagor/seekstream"
+	"github.com/xudaolong/imagor/seekstream"
 	...
 )
 
@@ -51,7 +51,7 @@ Use `NewTempFileBuffer(dir, pattern)` if total size is not known or does not fit
 package main
 
 import (
-	"github.com/cshum/imagor/seekstream"
+	"github.com/xudaolong/imagor/seekstream"
 	...
 )
 

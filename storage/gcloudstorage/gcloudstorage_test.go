@@ -2,10 +2,10 @@ package gcloudstorage
 
 import (
 	"context"
-	"github.com/cshum/imagor"
 	"github.com/fsouza/fake-gcs-server/fakestorage"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/xudaolong/imagor"
 	"net/http"
 	"testing"
 	"time"

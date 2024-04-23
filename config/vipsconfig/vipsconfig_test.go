@@ -1,10 +1,10 @@
 package vipsconfig
 
 import (
-	"github.com/cshum/imagor"
-	"github.com/cshum/imagor/config"
-	"github.com/cshum/imagor/vips"
 	"github.com/stretchr/testify/assert"
+	"github.com/xudaolong/imagor"
+	"github.com/xudaolong/imagor/config"
+	"github.com/xudaolong/imagor/vips"
 	"testing"
 )
 

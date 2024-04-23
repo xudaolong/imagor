@@ -1,10 +1,10 @@
 # imagor
 
-[![Test Status](https://github.com/cshum/imagor/workflows/test/badge.svg)](https://github.com/cshum/imagor/actions/workflows/test.yml)
+[![Test Status](https://github.com/xudaolong/imagor/workflows/test/badge.svg)](https://github.com/xudaolong/imagor/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/cshum/imagor/badge.svg?branch=master)](https://coveralls.io/github/cshum/imagor?branch=master)
 [![Docker Hub](https://img.shields.io/badge/docker-shumc/imagor-blue.svg)](https://hub.docker.com/r/shumc/imagor/)
-[![GitHub Container Registry](https://ghcr-badge.deta.dev/cshum/imagor/latest_tag?trim=major&label=ghcr.io&ignore=master,develop&color=%23007ec6)](https://github.com/cshum/imagor/pkgs/container/imagor)
-[![Go Reference](https://pkg.go.dev/badge/github.com/cshum/imagor.svg)](https://pkg.go.dev/github.com/cshum/imagor)
+[![GitHub Container Registry](https://ghcr-badge.deta.dev/cshum/imagor/latest_tag?trim=major&label=ghcr.io&ignore=master,develop&color=%23007ec6)](https://github.com/xudaolong/imagor/pkgs/container/imagor)
+[![Go Reference](https://pkg.go.dev/badge/github.com/xudaolong/imagor.svg)](https://pkg.go.dev/github.com/xudaolong/imagor)
 
 imagor is a fast, secure image processing server and Go library.
 
@@ -14,7 +14,7 @@ imagor implements libvips [streaming](https://www.libvips.org/2019/11/29/True-st
 
 imagor features a ton of image processing use cases, available as a HTTP server with first-class Docker support. It adopts the [thumbor](https://thumbor.readthedocs.io/en/latest/usage.html#image-endpoint) URL syntax representing a high-performance drop-in replacement.
 
-imagor is a Go library built with speed, security and extensibility in mind. Alongside there is [imagorvideo](https://github.com/cshum/imagorvideo) bringing video thumbnail capability through ffmpeg C bindings.
+imagor is a Go library built with speed, security and extensibility in mind. Alongside there is [imagorvideo](https://github.com/xudaolong/imagorvideo) bringing video thumbnail capability through ffmpeg C bindings.
 
 ### Quick Start
 
@@ -462,29 +462,29 @@ curl 'http://localhost:8000/params/g5bMqZvxaQK65qFPaP1qlJOTuLM=/fit-in/500x400/0
 imagor is a Go library built with speed, security and extensibility in mind.
 It facilitates high-level image processing in a modular architecture made up of a series of Go packages:
 
-- [imagor](https://pkg.go.dev/github.com/cshum/imagor) - the imagor core library
-- [imagorpath](https://pkg.go.dev/github.com/cshum/imagor/imagorpath) - parse and generate imagor endpoint
-- [vips](https://pkg.go.dev/github.com/cshum/imagor/vips) - libvips C bindings with `imagor.Processor` implementation
-- [httploader](https://pkg.go.dev/github.com/cshum/imagor/loader/httploader) - HTTP Loader, an `imagor.Loader` implementation
-- [filestorage](https://pkg.go.dev/github.com/cshum/imagor/storage/filestorage) - File Storage, an `imagor.Storage` implementation
-- [s3storage](https://pkg.go.dev/github.com/cshum/imagor/storage/s3storage) - AWS S3 Storage, an `imagor.Storage` implementation
-- [gcloudstorage](https://pkg.go.dev/github.com/cshum/imagor/storage/gcloudstorage) - Google Cloud Storage, an `imagor.Storage` implementation
+- [imagor](https://pkg.go.dev/github.com/xudaolong/imagor) - the imagor core library
+- [imagorpath](https://pkg.go.dev/github.com/xudaolong/imagor/imagorpath) - parse and generate imagor endpoint
+- [vips](https://pkg.go.dev/github.com/xudaolong/imagor/vips) - libvips C bindings with `imagor.Processor` implementation
+- [httploader](https://pkg.go.dev/github.com/xudaolong/imagor/loader/httploader) - HTTP Loader, an `imagor.Loader` implementation
+- [filestorage](https://pkg.go.dev/github.com/xudaolong/imagor/storage/filestorage) - File Storage, an `imagor.Storage` implementation
+- [s3storage](https://pkg.go.dev/github.com/xudaolong/imagor/storage/s3storage) - AWS S3 Storage, an `imagor.Storage` implementation
+- [gcloudstorage](https://pkg.go.dev/github.com/xudaolong/imagor/storage/gcloudstorage) - Google Cloud Storage, an `imagor.Storage` implementation
 
 Install [libvips](https://www.libvips.org/) and enable CGO:
 - `brew install vips` for Mac
 - `CGO_CFLAGS_ALLOW=-Xpreprocessor` being set to compile Go
 
-See example below and also [examples](https://github.com/cshum/imagor/tree/master/examples) folder for various ways you can use imagor:
+See example below and also [examples](https://github.com/xudaolong/imagor/tree/master/examples) folder for various ways you can use imagor:
 
 ```go
 package main
 
 import (
 	"context"
-	"github.com/cshum/imagor"
-	"github.com/cshum/imagor/imagorpath"
-	"github.com/cshum/imagor/loader/httploader"
-	"github.com/cshum/imagor/vips"
+	"github.com/xudaolong/imagor"
+	"github.com/xudaolong/imagor/imagorpath"
+	"github.com/xudaolong/imagor/loader/httploader"
+	"github.com/xudaolong/imagor/vips"
 	"io"
 	"os"
 )

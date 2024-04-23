@@ -3,9 +3,9 @@ package server
 import (
 	"context"
 	"fmt"
-	"github.com/cshum/imagor"
-	"github.com/cshum/imagor/imagorpath"
 	"github.com/stretchr/testify/assert"
+	"github.com/xudaolong/imagor"
+	"github.com/xudaolong/imagor/imagorpath"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"io"

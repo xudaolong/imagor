@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/cshum/imagor/config"
-	"github.com/cshum/imagor/config/awsconfig"
-	"github.com/cshum/imagor/config/gcloudconfig"
-	"github.com/cshum/imagor/config/vipsconfig"
+	"github.com/xudaolong/imagor/config"
+	"github.com/xudaolong/imagor/config/awsconfig"
+	"github.com/xudaolong/imagor/config/gcloudconfig"
+	"github.com/xudaolong/imagor/config/vipsconfig"
 	"os"
 )
 

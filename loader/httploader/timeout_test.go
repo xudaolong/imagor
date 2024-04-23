@@ -3,8 +3,8 @@ package httploader
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/cshum/imagor"
 	"github.com/stretchr/testify/assert"
+	"github.com/xudaolong/imagor"
 	"net/http"
 	"net/http/httptest"
 	"strings"

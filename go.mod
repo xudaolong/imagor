@@ -1,4 +1,4 @@
-module github.com/cshum/imagor
+module github.com/xudaolong/imagor
 
 go 1.21
 

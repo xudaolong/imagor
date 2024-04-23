@@ -2,8 +2,8 @@ package filestorage
 
 import (
 	"context"
-	"github.com/cshum/imagor"
-	"github.com/cshum/imagor/imagorpath"
+	"github.com/xudaolong/imagor"
+	"github.com/xudaolong/imagor/imagorpath"
 	"io"
 	"net/http"
 	"os"

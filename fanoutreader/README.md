@@ -2,7 +2,7 @@
 
 fanoutreader allows fan out arbitrary number of reader streams concurrently from one data source with known total size, using channel and memory buffer.
 
-https://pkg.go.dev/github.com/cshum/imagor/fanoutreader
+https://pkg.go.dev/github.com/xudaolong/imagor/fanoutreader
 
 ### Why?
 
@@ -35,7 +35,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/cshum/imagor/fanoutreader"
+	"github.com/xudaolong/imagor/fanoutreader"
 	"io"
 	"net/http"
 	"os"

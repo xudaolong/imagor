@@ -1,11 +1,11 @@
 package gcloudconfig
 
 import (
-	"github.com/cshum/imagor"
-	"github.com/cshum/imagor/config"
-	"github.com/cshum/imagor/storage/gcloudstorage"
 	"github.com/fsouza/fake-gcs-server/fakestorage"
 	"github.com/stretchr/testify/assert"
+	"github.com/xudaolong/imagor"
+	"github.com/xudaolong/imagor/config"
+	"github.com/xudaolong/imagor/storage/gcloudstorage"
 	"os"
 	"testing"
 )
