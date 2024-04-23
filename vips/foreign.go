@@ -107,10 +107,22 @@ func NewTiffExportParams() *TiffExportParams {
 // GifExportParams  are options when exporting an GIF to file or buffer.
 type GifExportParams struct {
 	StripMetadata bool
-	Quality       int
-	Dither        float64
-	Effort        int
-	Bitdepth      int
+	// 使用 quality 设置输出 GIF 的质量（1-100 之间的整数）。
+	Quality int
+	// 使用 dither 设置 Floyd-Steinberg 抖动程度
+	Dither float64
+	// 使用 effort 控制 CPU 工作量（1 是最快，10 是最慢，7 是默认值）。
+	Effort int
+	// 使用 bitdepth 设置输出 GIF 的位深度（1-8 之间的整数）。
+	Bitdepth int
+	// 使用 interframe_maxerror 设置阈值，低于该阈值的像素被视为相等。帧与帧之间不发生变化的像素可以变得透明，从而提高压缩率。默认 0。
+	InterframeMaxerror int
+	// 如果 reuse 为 TRUE，则 GIF 将使用从 in 中的元数据获取的单个全局调色板保存，并且不会进行新的调色板优化。
+	Reuse bool
+	// 如果 interlace 为 TRUE，则 GIF 文件将为隔行扫描（逐行 GIF）。这些文件可能更适合通过慢速网络连接显示，但需要更多内存进行编码。
+	Interlace bool
+	// 使用 interpalette_maxerror 设置阈值，低于该阈值将重用先前生成的调色板。
+	InterpaletteMaxerror int
 }
 
 // NewGifExportParams creates default values for an export of a GIF image.
@@ -257,6 +269,10 @@ func vipsSaveGIFToBuffer(in *C.VipsImage, params GifExportParams) ([]byte, error
 	p.gifDither = C.double(params.Dither)
 	p.gifEffort = C.int(params.Effort)
 	p.gifBitdepth = C.int(params.Bitdepth)
+	p.gitInterframeMaxerror = C.int(params.InterframeMaxerror)
+	p.gitReuse = C.int(boolToInt(params.Reuse))
+	p.gitInterlace = C.int(boolToInt(params.Interlace))
+	p.gitInterpaletteMaxerror = C.int(params.InterpaletteMaxerror)
 
 	return vipsSaveToBuffer(p)
 }

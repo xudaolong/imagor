@@ -313,7 +313,7 @@ func (v *Processor) Process(
 	}
 	format = supportedSaveFormat(format) // convert to supported export format
 	for {
-		buf, err := v.export(img, format, compression, quality, palette, bitdepth)
+		buf, err := v.export(img, format, compression, quality, palette, bitdepth, &p.Filters)
 		if err != nil {
 			return nil, WrapErr(err)
 		}
@@ -575,7 +575,7 @@ func supportedSaveFormat(format ImageType) ImageType {
 }
 
 func (v *Processor) export(
-	image *Image, format ImageType, compression int, quality int, palette bool, bitdepth int,
+	image *Image, format ImageType, compression int, quality int, palette bool, bitdepth int, params *imagorpath.Filters,
 ) ([]byte, error) {
 	switch format {
 	case ImageTypePNG:
@@ -609,6 +609,56 @@ func (v *Processor) export(
 		opts := NewGifExportParams()
 		if quality > 0 {
 			opts.Quality = quality
+		}
+		for _, filter := range *params {
+			// 如果包含 Dither 参数
+			if filter.Name == "dither" {
+				f, err := strconv.ParseFloat(filter.Args, 64)
+				if err != nil {
+					return nil, err
+				}
+				opts.Dither = f
+			}
+			// 如果包含 Effort 参数
+			if filter.Name == "effort" {
+				i, err := strconv.Atoi(filter.Args)
+				if err != nil {
+					return nil, err
+				}
+				opts.Effort = i
+			}
+			// 如果包含 Bitdepth 参数
+			if filter.Name == "bitdepth" {
+				i, err := strconv.Atoi(filter.Args)
+				if err != nil {
+					return nil, err
+				}
+				opts.Bitdepth = i
+			}
+			// 如果包含 InterframeMaxerror 参数
+			if filter.Name == "interframe_maxerror" {
+				f, err := strconv.Atoi(filter.Args)
+				if err != nil {
+					return nil, err
+				}
+				opts.InterframeMaxerror = f
+			}
+			// 如果包含 Reuse 参数
+			if filter.Name == "reuse" {
+				opts.Reuse = filter.Args == "true"
+			}
+			// 如果包含 Interlace 参数
+			if filter.Name == "interlace" {
+				opts.Interlace = filter.Args == "true"
+			}
+			// 如果包含 InterpaletteMaxerror 参数
+			if filter.Name == "interpalette_maxerror" {
+				f, err := strconv.Atoi(filter.Args)
+				if err != nil {
+					return nil, err
+				}
+				opts.InterpaletteMaxerror = f
+			}
 		}
 		return image.ExportGIF(opts)
 	case ImageTypeAVIF:

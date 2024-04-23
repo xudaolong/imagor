@@ -57,6 +57,10 @@ typedef struct SaveParams {
   double gifDither;
   int gifEffort;
   int gifBitdepth;
+  int gitInterframeMaxerror;
+  BOOL gitReuse;
+  BOOL gitInterlace;
+  int gitInterpaletteMaxerror;
 
   // WEBP
   BOOL webpLossless;

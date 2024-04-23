@@ -153,6 +153,18 @@ int set_gifsave_options(VipsOperation *operation, SaveParams *params) {
   if (params->gifBitdepth >= 1 && params->gifBitdepth <= 8) {
       ret = vips_object_set(VIPS_OBJECT(operation), "bitdepth", params->gifBitdepth, NULL);
   }
+  if (params->gitInterframeMaxerror >= 0 && params->gitInterframeMaxerror <= 100) {
+    ret = vips_object_set(VIPS_OBJECT(operation), "interframe_maxerror", params->gitInterframeMaxerror, NULL);
+  }
+  if (params->gitReuse) {
+    ret = vips_object_set(VIPS_OBJECT(operation), "reuse", params->gitReuse, NULL);
+  }
+  if (params->gitInterlace) {
+    ret = vips_object_set(VIPS_OBJECT(operation), "interlace", params->gitInterlace, NULL);
+  }
+  if (params->gitInterpaletteMaxerror >= 0 && params->gitInterpaletteMaxerror <= 100) {
+    ret = vips_object_set(VIPS_OBJECT(operation), "interpalette_maxerror", params->gitInterpaletteMaxerror, NULL);
+  }
   return ret;
 }
 
@@ -235,6 +247,10 @@ static SaveParams defaultSaveParams = {
     .gifDither = 0.0,
     .gifEffort = 0,
     .gifBitdepth = 0,
+    .gitInterframeMaxerror = 0,
+    .gitReuse = FALSE,
+    .gitInterlace = FALSE,
+    .gitInterpaletteMaxerror = 0,
 
     .webpLossless = FALSE,
     .webpNearLossless = FALSE,
